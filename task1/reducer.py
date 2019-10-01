@@ -30,12 +30,6 @@ line_acc = Accumulator()
 for raw_line in sys.stdin:
     line = raw_line.split("\t")
 
-    genre       = line[0]
-    runtime_acc = int(line[1])
-    count       = int(line[2])
-    min         = int(line[3])
-    max         = int(line[4])
-
     if line[0] != line_acc.genre:
         if line_acc.genre != None:
             line_acc.print_line()
