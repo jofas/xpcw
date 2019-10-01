@@ -9,4 +9,4 @@ for raw_line in sys.stdin:
     if runtime == "\\N" or genres == "\\N": continue
 
     for genre in genres.split(","):
-        print("%s|%s" % (genre, runtime))
+        print("%s\t%s" % (genre, runtime))

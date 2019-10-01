@@ -28,7 +28,7 @@ class Accumulator:
 line_acc = Accumulator()
 
 for raw_line in sys.stdin:
-    line = raw_line.split("|")
+    line = raw_line.split("\t")
 
     genre       = line[0]
     runtime_acc = int(line[1])

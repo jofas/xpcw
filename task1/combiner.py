@@ -16,7 +16,7 @@ class Accumulator:
         if runtime < self.min: self.min = runtime
 
     def print_line(self):
-        print("%s|%d|%d|%d|%d" % (
+        print("%s\t%d\t%d\t%d\t%d" % (
             self.genre, self.runtime_sum,
             self.instance_count, self.max, self.min ))
 
@@ -24,7 +24,7 @@ class Accumulator:
 line_acc = Accumulator()
 
 for raw_line in sys.stdin:
-    line = raw_line.split("|")
+    line = raw_line.split("\t")
     genre, runtime = line[0], int(line[1])
 
     if genre != line_acc.genre:
