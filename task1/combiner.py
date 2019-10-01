@@ -20,6 +20,7 @@ class Accumulator:
             self.genre, self.runtime_sum,
             self.instance_count, self.max, self.min ))
 
+
 line_acc = Accumulator()
 
 for raw_line in sys.stdin:
