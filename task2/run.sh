@@ -1,4 +1,4 @@
-OUT_DIR=/user/$USER/task1
+OUT_DIR=/user/$USER/task2
 IN_DIR=/data/small/imdb
 
 hadoop dfs -rm -r $OUT_DIR
