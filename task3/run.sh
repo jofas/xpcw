@@ -2,8 +2,8 @@ TMP_DIR=/user/$USER/tmp
 OUT_DIR=/user/$USER/task3
 IN_DIR=/data/small/imdb
 
-hadoop dfs -rm -r $TMP_DIR
-hadoop dfs -rm -r $OUT_DIR
+hdfs dfs -rm -r $TMP_DIR
+hdfs dfs -rm -r $OUT_DIR
 
 hadoop jar /opt/hadoop/hadoop-2.9.2/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
   -input $IN_DIR/title.basics.tsv \
@@ -14,13 +14,19 @@ hadoop jar /opt/hadoop/hadoop-2.9.2/share/hadoop/tools/lib/hadoop-streaming-2.9.
   -file mapper.py \
   -file reducer.py
 
-hadoop -dfs -cat $TMP_DIR/* > $TMP_DIR/job.out
-
 hadoop jar /opt/hadoop/hadoop-2.9.2/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
-  -input $TMP_DIR/job.out \
+    -D mapreduce.job.output.key.comparator.class=org.apache.hadoop.mapreduce.lib.partition.KeyFieldBasedComparator \
+    -D stream.num.map.output.key.fields=4 \
+    -D mapreduce.partition.keycomparator.options="-k1,1n -k2,2 -k3,3nr -k4,4" \
+    -D mapreduce.partition.keypartitioner.options=-k1,2 \
+    -D mapreduce.job.reduces=4 \
+  -input $TMP_DIR/* \
   -output $OUT_DIR \
   -mapper cat \
   -reducer cat \
+  -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner
+
+hdfs dfs -cat $OUT_DIR/*
 
 #-reducer reducer2.py \
 #-file reducer2.py
