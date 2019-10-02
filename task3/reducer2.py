@@ -12,11 +12,8 @@ for raw_line in sys.stdin:
 
     if decade != cur_decade:
         cur_decade = decade
-        cur_genre = None
-        continue
+        cur_genre  = None
 
     if genre != cur_genre:
         print ("%s|%s|%s" % (decade, genre, line[3]))
         cur_genre = genre
-    else:
-        continue
