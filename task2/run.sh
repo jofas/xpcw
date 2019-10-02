@@ -5,6 +5,7 @@ hadoop dfs -rm -r $OUT_DIR
 
 hadoop jar /opt/hadoop/hadoop-2.9.2/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
   -input $IN_DIR/title.basics.tsv \
+  -input $IN_DIR/title.ratings.tsv \
   -output $OUT_DIR \
   -mapper mapper.py \
   -combiner combiner.py \
