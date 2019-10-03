@@ -25,8 +25,8 @@ for raw_line in sys.stdin:
         prof = prof.split(",")
 
         # ! could be necessary to remove
-        #if "writer" not in prof:
-        #    continue
+        if "writer" not in prof:
+            continue
 
         titl = titl.split(",")
 
