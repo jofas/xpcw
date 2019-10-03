@@ -23,7 +23,8 @@ hadoop jar /opt/hadoop/hadoop-2.9.2/share/hadoop/tools/lib/hadoop-streaming-2.9.
   -input $TMP_DIR/* \
   -output $OUT_DIR \
   -mapper cat \
-  -reducer cat
+  -reducer reducer2.py \
+  -file reducer2.py
 
 hdfs dfs -cat $OUT_DIR/*
 
