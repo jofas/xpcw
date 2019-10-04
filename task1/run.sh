@@ -15,6 +15,6 @@ hadoop jar /opt/hadoop/hadoop-2.9.2/share/hadoop/tools/lib/hadoop-streaming-2.9.
 
 hdfs dfs -cat $OUT_DIR/* | head -20 > output.out
 
-if [ "$1" == "-v"]; then
+if [ "$1" == "-v" ]; then
   hdfs dfs -cat $OUT_DIR/*
 fi
