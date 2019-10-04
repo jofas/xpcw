@@ -1,5 +1,5 @@
 OUT_DIR=/user/$USER/assignment/task1
-IN_DIR=/data/small/imdb
+IN_DIR=/data/large/imdb
 
 hdfs dfs -rm -r $OUT_DIR
 
