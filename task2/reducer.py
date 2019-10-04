@@ -1,54 +1,25 @@
 #!/usr/bin/python
 import sys
 
-class MovieProcessor:
-    def __init__(self, len_basic, len_rating, processor):
-        self.basic  = []
-        self.rating = []
+cur_basic  = None
+cur_rating = None
 
-        self.len_basic  = len_basic
-        self.len_rating = len_rating
-
-        self.processor = processor
-
-    def process(self, line):
-        if len(line) == self.len_basic and \
-                len(self.rating) == self.len_rating:
-
-            if line[0] == self.rating[0]:
-                self.processor(line, self.rating)
-                self.basic = []
-            else:
-                self.basic = line
-            self.rating = []
-
-        elif len(line) == self.len_rating and \
-                len(self.basic) == self.len_basic:
-
-            if line[0] == self.basic[0]:
-                self.processor(self.basic, line)
-                self.rating = []
-            else:
-                self.rating = line
-            self.basic = []
-
-        elif len(line) == self.len_basic and \
-                len(self.rating) == 0:
-
-            self.basic = line
-
-        elif len(line) == self.len_rating and \
-                len(self.basic) == 0:
-
-            self.rating = line
-
-def processor(basic, rating):
-    if float(rating[1]) >= 7.5 \
-            and int(rating[2]) >= 500000:
-        print("%s" % basic[1])
-
-proc = MovieProcessor(2, 3, processor)
+def process_cur():
+    if cur_basic != None and cur_rating != None:
+        if cur_basic[0] == cur_rating[0]:
+            print("%s" % cur_basic[1])
 
 for raw_line in sys.stdin:
     line = raw_line.strip().split("\t")
-    proc.process(line)
+
+    if len(line) == 1:
+        cur_rating = line
+    elif len(line) == 2:
+        cur_basic = line
+    else:
+        print("%s" % line[0])
+        continue
+
+    process_cur()
+
+process_cur()
