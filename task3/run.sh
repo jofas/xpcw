@@ -1,5 +1,5 @@
 TMP_DIR=/user/$USER/tmp
-OUT_DIR=/user/$USER/task3
+OUT_DIR=/user/$USER/assignment/task3
 IN_DIR=/data/small/imdb
 
 hdfs dfs -rm -r $TMP_DIR
@@ -19,7 +19,6 @@ hadoop jar /opt/hadoop/hadoop-2.9.2/share/hadoop/tools/lib/hadoop-streaming-2.9.
     -D stream.num.map.output.key.fields=4 \
     -D mapreduce.partition.keycomparator.options="-k1,1n -k2,2 -k3,3nr -k4,4" \
     -D mapreduce.partition.keypartitioner.options=-k1,2 \
-    -D mapreduce.job.reduces=0 \
   -input $TMP_DIR/* \
   -output $OUT_DIR \
   -mapper mapper2.py \
