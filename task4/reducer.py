@@ -38,4 +38,5 @@ for raw_line in sys.stdin:
             cur_rating = line[1]
         else:
             cur_names.append(line[1:3])
+
 process_cur()

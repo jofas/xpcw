@@ -1,5 +1,5 @@
 TMP_DIR=/user/$USER/tmp
-OUT_DIR=/user/$USER/task4
+OUT_DIR=/user/$USER/assignment/task4
 IN_DIR=/data/small/imdb
 
 hdfs dfs -rm -r $TMP_DIR
@@ -22,9 +22,13 @@ hadoop jar /opt/hadoop/hadoop-2.9.2/share/hadoop/tools/lib/hadoop-streaming-2.9.
     -D mapreduce.job.reduces=1 \
   -input $TMP_DIR/* \
   -output $OUT_DIR \
-  -mapper cat \
+  -mapper mapper2.py \
   -reducer reducer2.py \
+  -file mapper2.py \
   -file reducer2.py
 
-hdfs dfs -cat $OUT_DIR/*
+hdfs dfs -cat $OUT_DIR/* | head -20 > output.out
 
+if [ "$1" == "-v" ]; then
+  hdfs dfs -cat $OUT_DIR/*
+fi
