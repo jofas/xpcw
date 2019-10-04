@@ -15,7 +15,7 @@ for raw_line in sys.stdin:
     inserted = False
     for i in range(len(BIGGEST)):
         if votes >= int(BIGGEST[i][1]):
-            BIGGEST.insert(line, i)
+            BIGGEST.insert(i, line)
             inserted = True
             break
 
