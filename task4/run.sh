@@ -1,6 +1,6 @@
 TMP_DIR=/user/$USER/tmp
 OUT_DIR=/user/$USER/assignment/task4
-IN_DIR=/data/small/imdb
+IN_DIR=/data/large/imdb
 
 hdfs dfs -rm -r $TMP_DIR
 hdfs dfs -rm -r $OUT_DIR
