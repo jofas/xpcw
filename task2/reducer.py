@@ -14,11 +14,8 @@ for raw_line in sys.stdin:
 
     if len(line) == 1:
         cur_rating = line
-    elif len(line) == 2:
-        cur_basic = line
     else:
-        print("%s" % line[0])
-        continue
+        cur_basic = line
 
     process_cur()
 

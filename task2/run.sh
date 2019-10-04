@@ -1,7 +1,7 @@
 OUT_DIR=/user/$USER/assignment/task2
-IN_DIR=/data/small/imdb
+IN_DIR=/data/large/imdb
 
-hadoop dfs -rm -r $OUT_DIR
+hdfs dfs -rm -r $OUT_DIR
 
 hadoop jar /opt/hadoop/hadoop-2.9.2/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar \
   -input $IN_DIR/title.basics.tsv \
