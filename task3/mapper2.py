@@ -24,7 +24,7 @@ for raw_line in sys.stdin:
             entry = MAP[decade][genre]
             if rating > entry[0] or (rating == entry[0]
                     and title < entry[1]):
-                entry = [rating, title]
+                MAP[decade][genre] = [rating, title]
         else:
             MAP[decade][genre] = [rating, title]
     else:

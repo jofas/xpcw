@@ -23,7 +23,7 @@ hadoop jar /opt/hadoop/hadoop-2.9.2/share/hadoop/tools/lib/hadoop-streaming-2.9.
   -output $OUT_DIR \
   -mapper mapper2.py \
   -reducer reducer2.py \
-  -file mapper2.py
+  -file mapper2.py \
   -file reducer2.py \
   -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner
 
