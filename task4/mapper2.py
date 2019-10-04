@@ -14,7 +14,7 @@ for raw_line in sys.stdin:
 
     inserted = False
     for i in range(len(BIGGEST)):
-        if votes >= BIGGEST[i][1]:
+        if votes >= int(BIGGEST[i][1]):
             BIGGEST.insert(line, i)
             inserted = True
             break
@@ -23,7 +23,7 @@ for raw_line in sys.stdin:
         BIGGEST.append(line)
 
     if len(BIGGEST) > N:
-        BIGGEST = BIGGEST[:N]
+        BIGGEST.pop()
 
 for line in BIGGEST:
     print("%s\t%s\t%s" % tuple(line))
