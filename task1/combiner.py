@@ -1,4 +1,16 @@
 #!/usr/bin/python
+
+## Combiner
+## ========
+##
+## Accumulates over genre. Sums the runtime, counts the
+## amount of movies and sets min and max.
+##
+## For each genre return \[genre, summed runtime,
+## amount of lines (movies), min, max\].
+##
+##
+
 import sys
 
 class Accumulator:

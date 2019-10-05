@@ -1,6 +1,13 @@
 #!/usr/bin/python
 import sys
 
+##Reducer
+##=======
+##
+##Accumulates over genre (see Combiner).
+##
+##
+
 class Accumulator:
     def __init__(self, line = [None, 0, 0, 0, 0]):
         self.genre          = line[0]
