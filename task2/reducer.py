@@ -1,4 +1,15 @@
 #!/usr/bin/python
+
+##Reducer
+##=======
+##
+##Prints each move title which has two lines. Only movies
+##which fulfill the defined criterias are represented by
+##two lines, since the movie from title.ratings.tsv is
+##otherwise omitted.
+##
+##
+
 import sys
 
 cur_basic  = None

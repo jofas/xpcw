@@ -1,4 +1,17 @@
 #!/usr/bin/python
+
+##Mapper 2
+##========
+##
+##In-mapper combiner for reducing network traffic.
+##
+##For each decade and genre, the title with the best rating
+##is saved and the others are disregarded.
+##
+##Returns \[decade, genre, avg, title\].
+##
+##
+
 import sys
 
 MAP = {}

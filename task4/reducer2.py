@@ -1,4 +1,15 @@
 #!/usr/bin/python
+
+##Reducer 2
+##=========
+##
+##*Important:* only one instance of the second reducer is
+##spawned.
+##
+##Return the 10 most destinct popular writers.
+##
+##
+
 import sys
 
 N = 10

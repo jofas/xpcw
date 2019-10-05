@@ -1,7 +1,19 @@
 #!/usr/bin/python
-import sys
 
-from bisect import insort
+##Mapper 2
+##========
+##
+##In-mapper combiner for reducing network traffic.
+##
+##Every mapper has a list of 10 elements which contain the
+##most popular writers the mapper instance encounters.
+##
+##For every line of the 10 most popular writers return
+##\[nconst, rating, name\].
+##
+##
+
+import sys
 
 N = 10
 

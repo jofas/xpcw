@@ -1,4 +1,14 @@
 #!/usr/bin/python
+
+##Reducer
+##=======
+##
+##Concatenates rating entries with basic entries. Splits
+##the genres field of the basic entry and for each genre
+##returns \[decade, genre, avg, title\]
+##
+##
+
 import sys
 
 cur_basic = None

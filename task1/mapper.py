@@ -27,7 +27,7 @@
 ##Data sources
 ##------------
 ##
-##title.basics.tsv
+##* title.basics.tsv
 ##
 ##
 ##Mapper

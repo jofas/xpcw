@@ -1,4 +1,12 @@
 #!/usr/bin/python
+
+##Reducer
+##=======
+##
+##Accumulate writers to a movie. If the writer (associated
+##with the movie) is actually part of the writer crew then
+##return \[nconst, rating, name\].
+
 import sys
 
 cur_movie  = None
@@ -12,6 +20,7 @@ def process_cur():
     for name in cur_names:
         if name[0] in cur_crew:
             print("%s\t%s\t%s" % (name[0], cur_rating, name[1]))
+
 
 for raw_line in sys.stdin:
     line = raw_line.strip().split("\t")
