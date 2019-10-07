@@ -18,7 +18,6 @@ hadoop jar /opt/hadoop/hadoop-2.9.2/share/hadoop/tools/lib/hadoop-streaming-2.9.
     -D mapreduce.job.output.key.comparator.class=org.apache.hadoop.mapreduce.lib.partition.KeyFieldBasedComparator \
     -D stream.num.map.output.key.fields=4 \
     -D mapreduce.partition.keycomparator.options="-k1,1n -k2,2 -k3,3nr -k4,4" \
-    -D mapreduce.partition.keypartitioner.options=-k1,2 \
     -D mapreduce.job.reduces=1 \
   -input $TMP_DIR/* \
   -output $OUT_DIR \
@@ -26,7 +25,6 @@ hadoop jar /opt/hadoop/hadoop-2.9.2/share/hadoop/tools/lib/hadoop-streaming-2.9.
   -reducer reducer2.py \
   -file mapper2.py \
   -file reducer2.py \
-  -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner
 
 hdfs dfs -cat $OUT_DIR/* | head -20 > output.out
 
