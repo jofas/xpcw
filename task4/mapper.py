@@ -56,16 +56,9 @@ import sys
 def process_names(line):
     id   = line[0]
     name = line[1]
-    prof = line[4]
     titl = line[5]
 
-    if "\\N" in [name, prof, titl]:
-        return
-
-    prof = prof.split(",")
-
-    # ! could be necessary to remove
-    if "writer" not in prof:
+    if "\\N" in [name, titl]:
         return
 
     titl = titl.split(",")

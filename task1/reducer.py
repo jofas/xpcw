@@ -28,7 +28,7 @@ class Accumulator:
 
     def print_line(self):
         print("%.2f|%d|%d|%s" % (
-            float(self.runtime_sum) / float(self.instance_count),
+            round(float(self.runtime_sum) / float(self.instance_count),2),
             self.max, self.min, self.genre ))
 
 

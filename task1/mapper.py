@@ -46,8 +46,7 @@ for raw_line in sys.stdin:
     runtime    = line[-2]
     genres     = line[-1]
 
-    if runtime == "\\N" or genres == "\\N" \
-            or title_type != "movie":
+    if runtime == "\\N" or genres == "\\N":
         continue
 
     for genre in genres.split(","):
